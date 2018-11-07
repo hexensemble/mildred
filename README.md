@@ -4,4 +4,4 @@ A top down 2D shooter with the look and feel of an old school RPG. Made over the
 
 Leaving the source code here for education purposes.
 
-Download: www.hexensemble.com/mildred-game
+Download: https://github.com/hexensemble/mildred/releases
