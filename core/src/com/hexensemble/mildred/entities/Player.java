@@ -19,7 +19,7 @@ import com.hexensemble.mildred.system.HUD;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class Player extends AbstractEntity implements Poolable {
@@ -43,12 +43,12 @@ public class Player extends AbstractEntity implements Poolable {
 	private Sound hitEnemy;
 
 	private Cutter cutter;
-	private Animation stationary;
-	private Animation up;
-	private Animation down;
-	private Animation left;
-	private Animation right;
-	private Animation attack;
+	private Animation<TextureRegion> stationary;
+	private Animation<TextureRegion> up;
+	private Animation<TextureRegion> down;
+	private Animation<TextureRegion> left;
+	private Animation<TextureRegion> right;
+	private Animation<TextureRegion> attack;
 	private TextureRegion currentFrame;
 
 	/**
@@ -201,12 +201,12 @@ public class Player extends AbstractEntity implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 3, 6);
-		stationary = new Animation(1, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
-		up = new Animation(0.2f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
-		down = new Animation(0.2f, cutter.frames[6], cutter.frames[7], cutter.frames[8]);
-		left = new Animation(0.2f, cutter.frames[9], cutter.frames[10], cutter.frames[11]);
-		right = new Animation(0.2f, cutter.frames[12], cutter.frames[13], cutter.frames[14]);
-		attack = new Animation(0.1f, cutter.frames[15], cutter.frames[16], cutter.frames[17]);
+		stationary = new Animation<TextureRegion>(1, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
+		up = new Animation<TextureRegion>(0.2f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
+		down = new Animation<TextureRegion>(0.2f, cutter.frames[6], cutter.frames[7], cutter.frames[8]);
+		left = new Animation<TextureRegion>(0.2f, cutter.frames[9], cutter.frames[10], cutter.frames[11]);
+		right = new Animation<TextureRegion>(0.2f, cutter.frames[12], cutter.frames[13], cutter.frames[14]);
+		attack = new Animation<TextureRegion>(0.1f, cutter.frames[15], cutter.frames[16], cutter.frames[17]);
 	}
 
 	@Override

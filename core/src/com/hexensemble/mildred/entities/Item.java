@@ -14,13 +14,13 @@ import com.hexensemble.mildred.system.HUD;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class Item extends AbstractEntity implements Poolable {
 
 	private Cutter cutter;
-	private Animation stationary;
+	private Animation<TextureRegion> stationary;
 	private TextureRegion currentFrame;
 
 	/**
@@ -94,7 +94,7 @@ public class Item extends AbstractEntity implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 3, 1);
-		stationary = new Animation(0.4f, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
+		stationary = new Animation<TextureRegion>(0.4f, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
 	}
 
 	@Override

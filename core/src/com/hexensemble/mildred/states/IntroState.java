@@ -23,7 +23,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.0.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class IntroState extends State {
@@ -42,8 +42,8 @@ public class IntroState extends State {
 	private TextureRegion startCurrentFrame;
 	private Cutter mildredCutter;
 	private Cutter startCutter;
-	private Animation mildred;
-	private Animation start;
+	private Animation<TextureRegion> mildred;
+	private Animation<TextureRegion> start;
 
 	private String copyright;
 
@@ -211,12 +211,12 @@ public class IntroState extends State {
 		startTexture = assetManager.get("graphics/intro-start.png", Texture.class);
 		mildredCutter = new Cutter(mildredTexture, 16, 1);
 		startCutter = new Cutter(startTexture, 3, 1);
-		mildred = new Animation(0.2f, mildredCutter.frames[0], mildredCutter.frames[1], mildredCutter.frames[2],
+		mildred = new Animation<TextureRegion>(0.2f, mildredCutter.frames[0], mildredCutter.frames[1], mildredCutter.frames[2],
 				mildredCutter.frames[3], mildredCutter.frames[4], mildredCutter.frames[5], mildredCutter.frames[6],
 				mildredCutter.frames[7], mildredCutter.frames[8], mildredCutter.frames[9], mildredCutter.frames[10],
 				mildredCutter.frames[11], mildredCutter.frames[12], mildredCutter.frames[13], mildredCutter.frames[14],
 				mildredCutter.frames[15]);
-		start = new Animation(0.1f, startCutter.frames[0], startCutter.frames[1], startCutter.frames[2]);
+		start = new Animation<TextureRegion>(0.1f, startCutter.frames[0], startCutter.frames[1], startCutter.frames[2]);
 	}
 
 }

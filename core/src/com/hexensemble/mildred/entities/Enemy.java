@@ -22,7 +22,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.0.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class Enemy extends AbstractEntity implements Poolable {
@@ -44,12 +44,12 @@ public class Enemy extends AbstractEntity implements Poolable {
 	private Sound hitPlayer;
 
 	protected Cutter cutter;
-	protected Animation stationary;
-	protected Animation up;
-	protected Animation down;
-	protected Animation left;
-	protected Animation right;
-	protected Animation attack;
+	protected Animation<TextureRegion> stationary;
+	protected Animation<TextureRegion> up;
+	protected Animation<TextureRegion> down;
+	protected Animation<TextureRegion> left;
+	protected Animation<TextureRegion> right;
+	protected Animation<TextureRegion> attack;
 	protected TextureRegion currentFrame;
 
 	/**
@@ -181,12 +181,12 @@ public class Enemy extends AbstractEntity implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 3, 6);
-		stationary = new Animation(1, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
-		up = new Animation(0.2f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
-		down = new Animation(0.2f, cutter.frames[6], cutter.frames[7], cutter.frames[8]);
-		left = new Animation(0.2f, cutter.frames[9], cutter.frames[10], cutter.frames[11]);
-		right = new Animation(0.2f, cutter.frames[12], cutter.frames[13], cutter.frames[14]);
-		attack = new Animation(0.1f, cutter.frames[15], cutter.frames[16], cutter.frames[17]);
+		stationary = new Animation<TextureRegion>(1, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
+		up = new Animation<TextureRegion>(0.2f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
+		down = new Animation<TextureRegion>(0.2f, cutter.frames[6], cutter.frames[7], cutter.frames[8]);
+		left = new Animation<TextureRegion>(0.2f, cutter.frames[9], cutter.frames[10], cutter.frames[11]);
+		right = new Animation<TextureRegion>(0.2f, cutter.frames[12], cutter.frames[13], cutter.frames[14]);
+		attack = new Animation<TextureRegion>(0.1f, cutter.frames[15], cutter.frames[16], cutter.frames[17]);
 	}
 
 	@Override

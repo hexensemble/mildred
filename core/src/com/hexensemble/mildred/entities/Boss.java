@@ -3,6 +3,7 @@ package com.hexensemble.mildred.entities;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Pool.Poolable;
 import com.hexensemble.mildred.levels.Level;
 import com.hexensemble.mildred.system.CoreSettings;
@@ -13,7 +14,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Beta 2.2.0
  */
 public class Boss extends Enemy implements Poolable {
@@ -107,12 +108,12 @@ public class Boss extends Enemy implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 3, 6);
-		stationary = new Animation(0.2f, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
-		up = new Animation(0.2f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
-		down = new Animation(0.2f, cutter.frames[6], cutter.frames[7], cutter.frames[8]);
-		left = new Animation(0.2f, cutter.frames[9], cutter.frames[10], cutter.frames[11]);
-		right = new Animation(0.2f, cutter.frames[12], cutter.frames[13], cutter.frames[14]);
-		attack = new Animation(0.1f, cutter.frames[15], cutter.frames[16], cutter.frames[17]);
+		stationary = new Animation<TextureRegion>(0.2f, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
+		up = new Animation<TextureRegion>(0.2f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
+		down = new Animation<TextureRegion>(0.2f, cutter.frames[6], cutter.frames[7], cutter.frames[8]);
+		left = new Animation<TextureRegion>(0.2f, cutter.frames[9], cutter.frames[10], cutter.frames[11]);
+		right = new Animation<TextureRegion>(0.2f, cutter.frames[12], cutter.frames[13], cutter.frames[14]);
+		attack = new Animation<TextureRegion>(0.1f, cutter.frames[15], cutter.frames[16], cutter.frames[17]);
 	}
 
 	@Override

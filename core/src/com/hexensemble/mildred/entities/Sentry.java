@@ -2,6 +2,7 @@ package com.hexensemble.mildred.entities;
 
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Pool.Poolable;
 import com.hexensemble.mildred.levels.Level;
 import com.hexensemble.mildred.system.Cutter;
@@ -11,7 +12,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Beta 2.2.0
  */
 public class Sentry extends Enemy implements Poolable {
@@ -88,8 +89,8 @@ public class Sentry extends Enemy implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 3, 2);
-		stationary = new Animation(1, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
-		attack = new Animation(0.1f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
+		stationary = new Animation<TextureRegion>(1, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
+		attack = new Animation<TextureRegion>(0.1f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
 	}
 
 	@Override

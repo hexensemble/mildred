@@ -22,7 +22,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.0.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class PrologueState extends State {
@@ -44,7 +44,7 @@ public class PrologueState extends State {
 	private Texture texture;
 	private TextureRegion currentFrame;
 	private Cutter cutter;
-	private Animation animation;
+	private Animation<TextureRegion> animation;
 	private boolean runAnimation;
 
 	private Music music;
@@ -239,7 +239,7 @@ public class PrologueState extends State {
 		stateTime = 0;
 		texture = assetManager.get("graphics/prologue-animation.png", Texture.class);
 		cutter = new Cutter(texture, 24, 1);
-		animation = new Animation(0.5f, cutter.frames[0], cutter.frames[1], cutter.frames[2], cutter.frames[3],
+		animation = new Animation<TextureRegion>(0.5f, cutter.frames[0], cutter.frames[1], cutter.frames[2], cutter.frames[3],
 				cutter.frames[4], cutter.frames[5], cutter.frames[6], cutter.frames[7], cutter.frames[8],
 				cutter.frames[9], cutter.frames[10], cutter.frames[11], cutter.frames[12], cutter.frames[13],
 				cutter.frames[14], cutter.frames[15], cutter.frames[16], cutter.frames[17], cutter.frames[18],

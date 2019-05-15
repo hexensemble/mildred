@@ -12,13 +12,13 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Alpha 1.1.0
  */
 public class Furniture extends AbstractEntity implements Poolable {
 
 	private Cutter cutter;
-	private Animation stationary;
+	private Animation<TextureRegion> stationary;
 	private TextureRegion currentFrame;
 
 	/**
@@ -93,7 +93,7 @@ public class Furniture extends AbstractEntity implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 3, 1);
-		stationary = new Animation(0.2f, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
+		stationary = new Animation<TextureRegion>(0.2f, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
 	}
 
 	@Override

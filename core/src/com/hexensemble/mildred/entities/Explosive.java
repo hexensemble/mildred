@@ -12,7 +12,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class Explosive extends AbstractEntity implements Poolable {
@@ -21,8 +21,8 @@ public class Explosive extends AbstractEntity implements Poolable {
 	private float explosionTimer;
 
 	private Cutter cutter;
-	private Animation stationary;
-	private Animation explosion;
+	private Animation<TextureRegion> stationary;
+	private Animation<TextureRegion> explosion;
 	private TextureRegion currentFrame;
 
 	/**
@@ -106,9 +106,9 @@ public class Explosive extends AbstractEntity implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 7, 2);
-		stationary = new Animation(0.2f, cutter.frames[0], cutter.frames[1], cutter.frames[2], cutter.frames[3],
+		stationary = new Animation<TextureRegion>(0.2f, cutter.frames[0], cutter.frames[1], cutter.frames[2], cutter.frames[3],
 				cutter.frames[4], cutter.frames[5], cutter.frames[6]);
-		explosion = new Animation(0.1f, cutter.frames[7], cutter.frames[8], cutter.frames[9], cutter.frames[10],
+		explosion = new Animation<TextureRegion>(0.1f, cutter.frames[7], cutter.frames[8], cutter.frames[9], cutter.frames[10],
 				cutter.frames[11], cutter.frames[12], cutter.frames[13]);
 	}
 

@@ -13,7 +13,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class Spawner extends AbstractEntity implements Poolable {
@@ -23,8 +23,8 @@ public class Spawner extends AbstractEntity implements Poolable {
 	private float animateSpawnTimer;
 
 	private Cutter cutter;
-	private Animation stationary;
-	private Animation spawning;
+	private Animation<TextureRegion> stationary;
+	private Animation<TextureRegion> spawning;
 	private TextureRegion currentFrame;
 
 	/**
@@ -119,8 +119,8 @@ public class Spawner extends AbstractEntity implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 3, 2);
-		stationary = new Animation(0.1f, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
-		spawning = new Animation(0.1f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
+		stationary = new Animation<TextureRegion>(0.1f, cutter.frames[0], cutter.frames[1], cutter.frames[2]);
+		spawning = new Animation<TextureRegion>(0.1f, cutter.frames[3], cutter.frames[4], cutter.frames[5]);
 	}
 
 	@Override

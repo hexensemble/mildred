@@ -13,7 +13,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class Explosion extends AbstractEntity implements Poolable {
@@ -21,7 +21,7 @@ public class Explosion extends AbstractEntity implements Poolable {
 	private float lifeTimer;
 
 	private Cutter cutter;
-	private Animation explosion;
+	private Animation<TextureRegion> explosion;
 	private TextureRegion currentFrame;
 
 	/**
@@ -111,7 +111,7 @@ public class Explosion extends AbstractEntity implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 8, 1);
-		explosion = new Animation(0.1f, cutter.frames[0], cutter.frames[1], cutter.frames[2], cutter.frames[3],
+		explosion = new Animation<TextureRegion>(0.1f, cutter.frames[0], cutter.frames[1], cutter.frames[2], cutter.frames[3],
 				cutter.frames[4], cutter.frames[5], cutter.frames[6], cutter.frames[7]);
 	}
 

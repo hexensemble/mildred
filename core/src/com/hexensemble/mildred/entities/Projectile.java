@@ -14,7 +14,7 @@ import com.hexensemble.mildred.system.Cutter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.2.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class Projectile extends AbstractEntity implements Poolable {
@@ -32,7 +32,7 @@ public class Projectile extends AbstractEntity implements Poolable {
 	private Sound hitWall;
 
 	private Cutter cutter;
-	private Animation fire;
+	private Animation<TextureRegion> fire;
 	private TextureRegion currentFrame;
 
 	/**
@@ -138,7 +138,7 @@ public class Projectile extends AbstractEntity implements Poolable {
 		super.animationInit();
 
 		cutter = new Cutter(sprite, 8, 1);
-		fire = new Animation(0.1f, cutter.frames[0], cutter.frames[1], cutter.frames[2], cutter.frames[3],
+		fire = new Animation<TextureRegion>(0.1f, cutter.frames[0], cutter.frames[1], cutter.frames[2], cutter.frames[3],
 				cutter.frames[4], cutter.frames[5], cutter.frames[6], cutter.frames[7]);
 	}
 
