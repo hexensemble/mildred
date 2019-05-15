@@ -31,12 +31,12 @@ public class CoreSettings {
 	/**
 	 * Version.
 	 */
-	public static final String VERSION = "Version 1.0.0";
+	public static final String VERSION = "Version 1.0.1";
 
 	/**
 	 * Version date.
 	 */
-	public static final String DATE = "19-APR-2016";
+	public static final String DATE = "15-May-2019";
 
 	/**
 	 * Copyright.

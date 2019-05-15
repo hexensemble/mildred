@@ -18,7 +18,7 @@ import com.hexensemble.mildred.system.CoreSettings;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.0.0
+ * @version 1.0.1
  * @since Alpha 1.2.0
  */
 public class CreditsState extends State {
@@ -32,7 +32,7 @@ public class CreditsState extends State {
 	public static final String ART = "Art";
 	public static final String ARTIST = "DENZI";
 	public static final String MUSIC = "Music & Sound";
-	public static final String MUSICIAN = "The Jezter";
+	public static final String MUSICIAN = "JZTR";
 	public static final String COPYRIGHT = CoreSettings.COPYRIGHT;
 	public static final String ART_LICENCE_1 = "DENZI's artwork used under a Creative Commons Licence:";
 	public static final String ART_LICENCE_2 = "Attribution-ShareAlike 3.0 Unported.";
