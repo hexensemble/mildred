@@ -13,7 +13,7 @@ import com.badlogic.gdx.utils.XmlWriter;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version 1.0.0
+ * @version 1.0.1
  * @since Alpha 2.0.0
  */
 public class CoreSettings {
@@ -176,62 +176,58 @@ public class CoreSettings {
 			FileHandle settingsFile = Gdx.files.external(SETTINGS_FILE);
 			XmlReader reader = new XmlReader();
 
-			try {
-				if (!settingsFile.exists()) {
-					width = 800;
-					height = 600;
-					fullscreen = false;
-					vSync = false;
-					fps = false;
-					sfxVol = 1;
-					musicVol = 1;
-					save();
-				} else {
-					for (int i = 0; i < reader.parse(settingsFile).getChildCount(); i++) {
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("width")) {
-							width = Integer.parseInt((reader.parse(settingsFile).getChild(i).getText()));
-						}
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("height")) {
-							height = Integer.parseInt((reader.parse(settingsFile).getChild(i).getText()));
-						}
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("fullscreen")) {
-							fullscreen = Boolean.parseBoolean((reader.parse(settingsFile).getChild(i).getText()));
-						}
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("vsync")) {
-							vSync = Boolean.parseBoolean((reader.parse(settingsFile).getChild(i).getText()));
-						}
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("fps")) {
-							fps = Boolean.parseBoolean((reader.parse(settingsFile).getChild(i).getText()));
-						}
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("sfx")) {
-							sfxVol = Float.parseFloat((reader.parse(settingsFile).getChild(i).getText()));
-						}
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("music")) {
-							musicVol = Float.parseFloat((reader.parse(settingsFile).getChild(i).getText()));
-						}
+			if (!settingsFile.exists()) {
+				width = 800;
+				height = 600;
+				fullscreen = false;
+				vSync = false;
+				fps = false;
+				sfxVol = 1;
+				musicVol = 1;
+				save();
+			} else {
+				for (int i = 0; i < reader.parse(settingsFile).getChildCount(); i++) {
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("width")) {
+						width = Integer.parseInt((reader.parse(settingsFile).getChild(i).getText()));
 					}
-
-					boolean soundSetting = false;
-					boolean musicSetting = false;
-					for (int i = 0; i < reader.parse(settingsFile).getChildCount(); i++) {
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("sfx")) {
-							soundSetting = true;
-						}
-						if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("music")) {
-							musicSetting = true;
-						}
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("height")) {
+						height = Integer.parseInt((reader.parse(settingsFile).getChild(i).getText()));
 					}
-					if (!soundSetting) {
-						sfxVol = 1;
-						save();
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("fullscreen")) {
+						fullscreen = Boolean.parseBoolean((reader.parse(settingsFile).getChild(i).getText()));
 					}
-					if (!musicSetting) {
-						musicVol = 1;
-						save();
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("vsync")) {
+						vSync = Boolean.parseBoolean((reader.parse(settingsFile).getChild(i).getText()));
+					}
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("fps")) {
+						fps = Boolean.parseBoolean((reader.parse(settingsFile).getChild(i).getText()));
+					}
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("sfx")) {
+						sfxVol = Float.parseFloat((reader.parse(settingsFile).getChild(i).getText()));
+					}
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("music")) {
+						musicVol = Float.parseFloat((reader.parse(settingsFile).getChild(i).getText()));
 					}
 				}
-			} catch (IOException e) {
-				e.printStackTrace();
+
+				boolean soundSetting = false;
+				boolean musicSetting = false;
+				for (int i = 0; i < reader.parse(settingsFile).getChildCount(); i++) {
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("sfx")) {
+						soundSetting = true;
+					}
+					if (reader.parse(settingsFile).getChild(i).getAttribute("key").contains("music")) {
+						musicSetting = true;
+					}
+				}
+				if (!soundSetting) {
+					sfxVol = 1;
+					save();
+				}
+				if (!musicSetting) {
+					musicVol = 1;
+					save();
+				}
 			}
 		} else {
 			width = HTML_WIDTH;
