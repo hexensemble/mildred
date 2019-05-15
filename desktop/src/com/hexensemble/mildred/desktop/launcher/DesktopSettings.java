@@ -14,7 +14,7 @@ import java.util.Properties;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.0.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class DesktopSettings {
@@ -92,7 +92,7 @@ public class DesktopSettings {
 	/**
 	 * Update site.
 	 */
-	public static final String UPDATE_SITE = "www.hexensemble.com";
+	public static final String UPDATE_SITE = "http://www.hexensemble.com";
 
 	/**
 	 * Update URL.

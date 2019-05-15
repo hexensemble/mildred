@@ -2,9 +2,8 @@ package com.hexensemble.mildred.desktop.launcher;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.InetSocketAddress;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.Socket;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -13,7 +12,7 @@ import java.net.URLConnection;
  * 
  * @author HexEnsemble
  * @author www.hexensemble.com
- * @version Beta 2.0.0
+ * @version 1.0.1
  * @since Alpha 1.0.0
  */
 public class Updater {
@@ -24,22 +23,25 @@ public class Updater {
 	public Updater() {
 
 	}
-
+	
 	/**
-	 * Checks if the update server is reachable.
+	 * Checks if the update website is reachable.
 	 * 
-	 * @return Update server reachable true/false.
+	 * @throws IOException
+	 *             IOException.
+	 * @return True if site code is 200.
 	 */
-	public static boolean isReachable() {
-		try {
-			Socket socket = new Socket();
-			InetSocketAddress address = new InetSocketAddress(DesktopSettings.UPDATE_SITE, 80);
-			socket.connect(address, 3000);
-			socket.close();
-			return true;
-		} catch (IOException e) {
-			return false;
-		}
+	public static boolean isReachable() throws IOException{		
+		URL url = new URL(DesktopSettings.UPDATE_SITE);
+		
+	    HttpURLConnection.setFollowRedirects(false);
+	    HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+	    httpURLConnection.setRequestMethod("HEAD");
+	    httpURLConnection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 (.NET CLR 3.5.30729)");
+	    
+	    int responseCode = httpURLConnection.getResponseCode();
+
+	    return responseCode == HttpURLConnection.HTTP_OK;
 	}
 
 	/**
