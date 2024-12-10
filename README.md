@@ -1,20 +1,12 @@
 # Mildred
 
-A top-down 2D dungeon crawler shooter with the look and feel of an old-school RPG. Developed over six months while learning Java and LibGDX.
+A top-down 2D dungeon crawler shooter. Developed over six months while learning Java and LibGDX.
 
 **Preview:** https://www.youtube.com/watch?v=BhGF0GFfGDI
 
-Achievements from working on this project:
+Learning highlights:
 
-**Java Mastery:** Deepened understanding of Java through the implementation of core game loops, event handling, and object-oriented principles.
-
-**Use of the LibGDX Framework:** Utilized LibGDX, a popular game development framework, to handle 2D graphics, audio, and game physics effectively.
-
-**Game Mechanics:** Features include enemy interactions, A* pathfinding, collision detection, asset pooling, player controls, and level design, showcasing expertise in gameplay programming.
-
-**User Interfaces:** Created interactive menus, HUDs (heads-up displays), and dynamic UI components.
-
-**Debugging and Optimization:** Solved challenges such as low frame rates, crashes, and resolution issues in early builds, demonstrating strong problem-solving and performance optimization skills.
+Mastered Java and LibGDX to build a 2D game with advanced mechanics like A* pathfinding, collision detection, and dynamic UIs, while optimizing performance and debugging complex issues.
 
 Notes and future improvements:
 
