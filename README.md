@@ -1,6 +1,6 @@
 # Mildred
 
-A top-down 2D shooter with the look and feel of an old-school RPG. Developed over six months while learning Java and LibGDX.
+A top-down 2D dungeon crawl shooter with the look and feel of an old-school RPG. Developed over six months while learning Java and LibGDX.
 
 **Preview:** https://www.youtube.com/watch?v=BhGF0GFfGDI
 
