@@ -4,11 +4,17 @@ Top-down 2D action game made with Java and libGDX. 🕹️
 
 Traverse levels, shoot monsters, and fight your way to victory. Help Mildred escape the labyrinthine facilities, caves, and castles she's trapped in. As she grows stronger, so do her enemies.
 
+<br>
+
 ![Mildred](preview.png)
+
+<br>
 
 **Preview:** https://www.youtube.com/watch?v=BhGF0GFfGDI
 
 **Download:** https://github.com/hexensemble/mildred/releases
+
+<br>
 
 I developed Mildred over six months while learning Java. It's a fully complete game with multiple levels, enemies, UI, music, save/load functionality, and even a custom level loader. Runs on Mac, Linux, and Windows.
 
